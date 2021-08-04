@@ -8,7 +8,7 @@ use function PHPUnit\Framework\throwException;
 
 class RandomProcessor
 {
-    private $fileWriter;
+    private FileWriter $fileWriter;
     public function __construct(FileWriter $fileWriter)
     {
         $this->fileWriter = $fileWriter;
@@ -16,8 +16,8 @@ class RandomProcessor
 
     public function process(array $data) {
         // attempt to write to file
-        $fileWriter = new CsvFileWriter();
-        $result = $fileWriter->writeToFile($data);
+//        $fileWriter = new CsvFileWriter(); // not anymore !
+        $result = $this->fileWriter->writeToFile($data);
 
         if(!$result) {
             throw new \Exception('Error writing to file');

@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-class CsvFileWriter
+class CsvFileWriter extends FileWriter
 {
     public function writeToFile($data): bool
     {
