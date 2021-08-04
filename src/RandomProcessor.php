@@ -14,7 +14,7 @@ class RandomProcessor
         $this->fileWriter = $fileWriter;
     }
 
-    public function process(array $data) {
+    public function process(array $data): bool {
         // attempt to write to file
 //        $fileWriter = new CsvFileWriter(); // not anymore !
         $result = $this->fileWriter->writeToFile($data);
@@ -24,5 +24,6 @@ class RandomProcessor
         }
         // continue processing
         print 'Continue processing...' . PHP_EOL;
+        return true;
     }
 }
